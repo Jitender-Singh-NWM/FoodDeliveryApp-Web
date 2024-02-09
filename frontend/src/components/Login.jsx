@@ -22,9 +22,9 @@ const Login = () => {
             console.log(result);
             if(result.data === "Success"){
                 const COMETCHAT_CONSTANTS = {
-                    APP_ID: "APP_ID", //Replace with your App ID
-                    REGION: "REGION", //Replace with your App Region
-                    AUTH_KEY: "AUTH_KEY" //Replace with your Auth Key
+                    APP_ID: "24883762280afdf7", //Replace with your App ID
+                    REGION: "us", //Replace with your App Region
+                    AUTH_KEY: "4041814a5efc490013934431c8e39554d614af4a" //Replace with your Auth Key
                     }
                     
                     //create the builder
@@ -38,6 +38,7 @@ const Login = () => {
                     //Initialize CometChat UIKit
                     CometChatUIKit.init(UIKitSettings).then(() => {
                       console.log("Initialization completed successfully");
+                      
                       // You can now call login function.
                     }).catch(console.log);
 
