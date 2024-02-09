@@ -58,6 +58,7 @@ const Home = () => {
                 </div>
                 <a href className="btn btn-primary py-2 px-4">Book A Table</a>
               </div>
+              <i className="fas fa-shopping-cart" style={{ marginLeft: '5px', color: 'white', fontSize: '24px' }}></i>
             </nav>
             <div className="container-xxl py-5 bg-dark hero-header mb-5">
               <div className="container my-5 py-5">
