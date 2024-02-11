@@ -5,6 +5,7 @@ const FormDataModel = require ('./models/FormData');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 const transporter = require('./emailConfig'); // Adjust the path accordingly
+const { MongoClient, ServerApiVersion } = require('mongodb');
 var tken='';
 
 
@@ -19,6 +20,29 @@ const PasswordResetModel = require('./models/PasswordReset'); // Add this line
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/practice_mern');
+// mongoose.connect('mongodb+srv://baswarajprajapwar1:<mFf8oOaDkEBiuC42>@cluster0.yi71dka.mongodb.net/?retryWrites=true&w=majority')
+// const uri = "mongodb+srv://baswarajprajapwar1:mFf8oOaDkEBiuC42@cluster0.yi71dka.mongodb.net/?retryWrites=true&w=majority";
+
+// const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
+// async function run() {
+//   try {
+//     // Connect the client to the server	(optional starting in v4.7)
+//     await client.connect();
+//     // Send a ping to confirm a successful connection
+//     await client.db("admin").command({ ping: 1 });
+//     console.log("Pinged your deployment. You successfully connected to MongoDB!");
+//   } finally {
+//     // Ensures that the client will close when you finish/error
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
 
 app.get('/reset-password', (req, res) => {
     res.redirect('http://127.0.0.1:5173/PasswordResetpage')
@@ -206,7 +230,7 @@ app.post('/forgot-password', (req, res) => {
 
 app.post('/register', (req, res)=>{
     // To post / insert data into database
-
+console.log("req.body",req.body);
     const {email, password} = req.body;
     FormDataModel.findOne({email: email})
     .then(user => {
@@ -219,44 +243,37 @@ app.post('/register', (req, res)=>{
             .catch(err => res.json(err))
         }
     })
+  //   FormDataModel.findOneAndUpdate(
+  //     { email: req.body.email },
+  //     req.body,
+  //     { upsert: true, new: true },
+  //     (err, log_reg_form) => {
+  //         if (err) {
+  //             console.log('Error creating/updating user:', err);
+  //             res.status(500).json({ error: 'Internal Server Error' });
+  //         } else {
+  //             console.log('User created/updated successfully:', log_reg_form);
+  //             res.json(log_reg_form);
+  //         }
+  //     }
+  // );
+  
     
 })
 
 app.post('/login', (req, res)=>{
     // To find record from the database
-    var bcrypt = require('bcryptjs');
-
     const {email, password} = req.body;
     FormDataModel.findOne({email: email})
     .then(user => {
         if(user){
-          const salt = bcrypt.genSaltSync(10)
-          const hashedPassword = bcrypt.hashSync(password, salt)
-          /*bcrypt.compare("hashedPassword", hash).then((res) => {
-            // res === true
-        });*/
-        //var ispassed=bcrypt.compareSync(hashedPassword, hash); // true
-
-        
-            // If user found then these 2 cases
-            //if(user.password === password) {
-        //var ispassed=bcrypt.compareSync(hashedPassword, hash); // true
-        /*if(ispassed){
-                res.json("Success");
+            // If user found then these 2 cases - Ashok
+            if(user.password === password) {
+                res.json(user);
             }
             else{
                 res.json("Wrong password");
-            }*/
-            bcrypt.compare(password, user.password, (err, isMatch) => {
-              if (err) throw err;
-
-              if (isMatch) {
-                  res.json("Success");
-              } else {
-                  res.json("Wrong password");
-              }
-          });
-
+            }
         }
         // If user not found then 
         else{

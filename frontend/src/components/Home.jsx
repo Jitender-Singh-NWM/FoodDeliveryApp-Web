@@ -1,16 +1,27 @@
 // import React from 'react';
-//import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import { Card,Row,Col } from 'antd';
 const Home = () => {
+
+  const restaurants = [
+    { name: '1770 House', description: 'East Hampton, Contemporary American >>', image: 'img/about-5.jpg' },
+    { name: 'Arethusa al Tavolo', description: 'Bantam, Contemporary American >>', image: 'img/about-6.jpg' },
+    { name: 'Barclay Prime', description: 'Philadelphia, Steakhouse >>', image: 'img/about-7.jpg' },
+    { name: 'Barrique Venice', description: 'Venice, Italian >>', image: 'img/about-8.jpg' },
+    { name: 'Mehfil', description: 'A delightful place to enjoy delicious meals and warm ambiance >>', image: 'img/about-1.jpg' },
+    { name: 'Bawarchi', description: 'SERVED EVERY DAY SINCE 1990 >>', image: 'img/about-3.jpg' },
+    { name: 'Shagouse', description: 'SAY NO TO MEATS ON DRUGS >>', image: 'img/about-2.jpg' },
+    { name: 'Paradise', description: 'BIENVENIDOS >>', image: 'img/about-4.jpg' },
+  ];
   return (
     <div>
-        <meta charSet="utf-8" />
+         <meta charSet="utf-8" />
         <title>Restoran - Bootstrap Restaurant Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content name="keywords" />
-        <meta content name="description" />
+        <meta content name="description" /> 
         {/* Favicon */}
-        <link href="img/favicon.ico" rel="icon" />
+        {/* <link href="img/favicon.ico" rel="icon" />
         {/* Google Web Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
@@ -25,7 +36,7 @@ const Home = () => {
         {/* Customized Bootstrap Stylesheet */}
         <link href="css/bootstrap.min.css" rel="stylesheet" />
         {/* Template Stylesheet */}
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />  
         <div className="container-xxl bg-white p-0">
           {/* Spinner Start */}
           
@@ -175,7 +186,7 @@ const Home = () => {
             <div className="container">
               <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h5 className="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 className="mb-5">Most Popular Items</h1>
+                <h1 className="mb-5">Most Popular Restaurants</h1>
               </div>
               <div className="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
                 <ul className="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
@@ -207,7 +218,7 @@ const Home = () => {
                     </a>
                   </li>
                 </ul>
-                <div className="tab-content">
+                {/* <div className="tab-content">
                   <div id="tab-1" className="tab-pane fade show p-0 active">
                     <div className="row g-4">
                       <div className="col-lg-6">
@@ -508,7 +519,21 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
+            <Row gutter={[16, 16]}> {/* Adjust the gutter as needed */}
+            {restaurants.map((restaurant, index) => (
+              <Col key={index} xs={24} sm={12} md={8} lg={6} >
+                <Link to={`/Restaurants/${restaurant.name}`}>
+                <Card 
+                  cover={<img alt="Food" src={restaurant.image} style={{ width: '100%', height: 'auto' }} />}
+                  style={{margin: '0 8px' }}                >
+                  <Card.Meta title={restaurant.name} description={restaurant.description} />
+                </Card>
+                </Link>
+              </Col>
+            ))}
+          </Row>
+
               </div>
             </div>
           </div>

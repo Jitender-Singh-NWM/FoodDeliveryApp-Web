@@ -3,16 +3,15 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { CometChatUIKit,UIKitSettingsBuilder } from "@cometchat/chat-uikit-react";
-
-
+import { message } from 'antd';
 
 const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    //To know who logged in i.e admin or customer Ashok 12, 13, 14 lines
+    const [user,setUser] = useState()
+    console.log("user",user);
     const navigate = useNavigate();
-
-    
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -20,35 +19,16 @@ const Login = () => {
         axios.post( 'http://localhost:3001/login', {email, password})
         .then(result => {
             console.log(result);
-            if(result.data === "Success"){
-                const COMETCHAT_CONSTANTS = {
-                    APP_ID: "APP_ID", //Replace with your App ID
-                    REGION: "REGION", //Replace with your App Region
-                    AUTH_KEY: "AUTH_KEY" //Replace with your Auth Key
-                    }
-                    
-                    //create the builder
-                    const UIKitSettings = new UIKitSettingsBuilder()
-                      .setAppId(COMETCHAT_CONSTANTS.APP_ID)
-                      .setRegion(COMETCHAT_CONSTANTS.REGION)
-                      .setAuthKey(COMETCHAT_CONSTANTS.AUTH_KEY)
-                      .subscribePresenceForFriends()
-                      .build();
-                    
-                    //Initialize CometChat UIKit
-                    CometChatUIKit.init(UIKitSettings).then(() => {
-                      console.log("Initialization completed successfully");
-                      // You can now call login function.
-                    }).catch(console.log);
-
-
-                console.log("Login Success");
-                alert('Login successful!')
-
+            if(result.data.length!==0){
+                console.log("Login Success",result.data.userType);
+                message.success(`${result.data.userType} Logged in successfully`);   // Ashok 24, 25
+                setUser(result.data)
                 navigate('/home');
             }
             else{
-                alert('Incorrect password! Please try again.');
+                // alert('Incorrect password! Please try again.');
+                message.error('Incorrect password! Please try again.');
+
             }
         })
         .catch(err => console.log(err));
@@ -60,7 +40,7 @@ const Login = () => {
             <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : `url("https://plus.unsplash.com/premium_photo-1674106347866-8282d8c19f84?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,backgroundRepeat: 'no-repeat',
   width:'100%'  }}>
                 <div className="bg-white p-3 rounded" style={{width : '40%'}}>
-                    <h2 className='mb-3 text-primary'>Just Grab Login</h2>
+                    <h2 className='mb-3 text-primary'>Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">
                             <label htmlFor="exampleInputEmail1" className="form-label">
@@ -94,6 +74,7 @@ const Login = () => {
                     <p className='container my-2'>Don&apos;t have an account?</p>
                     <Link to='/register' className="btn btn-secondary">Register</Link><br/><br/>
                     <Link to='/forgot' className="btn btn-warning">Forgot Password ?</Link>
+                    
                 </div>
             </div>
         </div>
