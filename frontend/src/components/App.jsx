@@ -2,6 +2,9 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Forgot from './forgot';
+//import Maps from './Maps';
+
+//<Maps></Maps>
 import PasswordResetpage from './PasswordResetpage';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 

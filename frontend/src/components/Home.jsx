@@ -589,6 +589,75 @@ const Home = () => {
             </div>
           </div>
           {/* Reservation Start */}
+
+          {/* Maps Start */}
+          <div className="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+   
+   <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+     <h5 className="section-title ff-secondary text-center text-primary fw-normal">Sitemap</h5>
+     <h1 className="mb-5">Browse our Restaurants here</h1>
+   </div>
+   </div>
+ <div className="row g-0">
+   <div className="col-md-6">
+     <div className="d-flex align-items-center">
+            {/* <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=&q=Space+Needle,Seattle+WA">
+</iframe> */} <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width = "700" height = "600" src="https://maps.google.com/maps?width=700&amp;height=600&amp;hl=en&amp;q=Maryville,Missouri&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+     </div>
+   </div>
+   <div className="col-md-6 bg-dark d-flex align-items-center">
+     <div className="p-5 wow fadeInUp" data-wow-delay="0.2s">
+       <h5 className="section-title ff-secondary text-start text-primary fw-normal">Maps</h5>
+       <h1 className="text-white mb-4">You can View Sitemap here</h1>
+       <form>
+         <div className="row g-3">
+           <div className="col-md-6">
+             <div className="form-floating">
+               <input type="text" className="form-control" id="name" placeholder="Your Name" />
+               <label htmlFor="name">Enter State</label>
+             </div>
+           </div>
+           <div className="col-md-6">
+             <div className="form-floating">
+               <input type="email" className="form-control" id="email" placeholder="Your Email" />
+               <label htmlFor="email">Enter City</label>
+             </div>
+           </div>
+           
+          
+           <div className="col-12">
+             <div className="form-floating">
+               <textarea className="form-control" placeholder="Special Request" id="message" style={{height: '100px'}} defaultValue={""} />
+               <label htmlFor="message">Special Request</label>
+             </div>
+           </div>
+           <div className="col-12">
+             <button className="btn btn-primary w-100 py-3" type="submit"> Restaurants near Me </button>
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
+<div className="modal fade" id="videoModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div className="modal-dialog">
+   <div className="modal-content rounded-0">
+     <div className="modal-header">
+       <h5 className="modal-title" id="exampleModalLabel">Youtube Video</h5>
+       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+     </div>
+     <div className="modal-body">
+       {/* 16:9 aspect ratio */}
+       {/* <div className="ratio ratio-16x9">
+         <iframe className="embed-responsive-item" src id="video" allowFullScreen allowscriptaccess="always" allow="autoplay" />
+       </div> */}
+        
+     </div>
+   </div>
+ </div>
+</div>
+{/* Maps end */}  
           {/* Team Start */}
           <div className="container-xxl pt-5 pb-3">
             <div className="container">
@@ -657,6 +726,8 @@ const Home = () => {
             </div>
           </div>
           {/* Team End */}
+
+
           {/* Testimonial Start */}
           <div className="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div className="container">
@@ -724,6 +795,7 @@ const Home = () => {
                   <a className="btn btn-link" href>Reservation</a>
                   <a className="btn btn-link" href>Privacy Policy</a>
                   <a className="btn btn-link" href>Terms &amp; Condition</a>
+                  <a className="btn btn-link" href>Sitemap</a>
                 </div>
                 <div className="col-lg-3 col-md-6">
                   <h4 className="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
@@ -778,9 +850,9 @@ const Home = () => {
           {/* Back to Top */}
           <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="bi bi-arrow-up" /></a>
         </div>
-        {/* JavaScript Libraries */}
-        {/* Template Javascript */}
-      </div>
+        // {/* JavaScript Libraries */}
+        // {/* Template Javascript */}
+      // </div>
   )
 }
 
