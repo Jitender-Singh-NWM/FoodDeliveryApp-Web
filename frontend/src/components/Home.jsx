@@ -68,7 +68,7 @@ const Home = () => {
                   <a href="contact.html" className="nav-item nav-link">Contact</a>
                 </div>
                 <a href className="btn btn-primary py-2 px-4">Book A Table</a>
-                <a href className="btn btn-primary py-2 px-4">Bks</a>
+                <i className="fas fa-shopping-cart" style={{ marginLeft: '5px', color: 'white', fontSize: '24px' }}></i>
                 
               </div>
             </nav>
