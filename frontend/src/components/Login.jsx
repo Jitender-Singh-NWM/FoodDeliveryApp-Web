@@ -8,7 +8,7 @@ import { message } from 'antd';
 const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    //To know who logged in i.e admin or customer Ashok 12, 13, 14 lines
+    //To know who logged in i.e admin or customer Ashok 12, 13, 14 lines - Modified the code for admin user
     const [user,setUser] = useState()
     console.log("user",user);
     const navigate = useNavigate();
