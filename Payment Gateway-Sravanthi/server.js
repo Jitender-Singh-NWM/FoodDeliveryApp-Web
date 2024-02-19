@@ -9,6 +9,10 @@ const YOUR_DOMAIN = 'http://localhost:3000';
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     ui_mode: 'embedded',
+    billing_address_collection: 'auto',
+    shipping_address_collection: {
+      allowed_countries: ['US'],
+    },
     line_items: [
       {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
@@ -16,6 +20,9 @@ app.post('/create-checkout-session', async (req, res) => {
         quantity: 1,
       },
     ],
+    phone_number_collection: {
+      enabled: true,
+    },
     mode: 'payment',
     return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
   });
