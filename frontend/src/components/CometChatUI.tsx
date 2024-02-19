@@ -61,7 +61,7 @@ export function CometChatUI() {
     } else {
     	setIsMobileView(false);
     }
-  }; 
+  };   
                                          
   useEffect(() => {
     resizeWindow();
