@@ -58,4 +58,35 @@ const UserProfile = () => {
                                 <strong>Email Id</strong>
                             </label>
                             <input 
-                         
+                                type="email" 
+                                placeholder="Enter Email"
+                                className="form-control" 
+                                id="exampleInputEmail" 
+                                onChange={(event) => setEmail(event.target.value)}
+                                required
+                            /> 
+                        </div>
+                        <div className="mb-3 text-start">
+                            <label htmlFor="exampleInputPassword" className="form-label">
+                                <strong>Password</strong>
+                            </label>
+                            <input 
+                                type="password" 
+                                placeholder="Enter Password"
+                                className="form-control" 
+                                id="exampleInputPassword" 
+                                onChange={(event) => setPassword(event.target.value)}
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Register</button>
+                    </form>
+                    <p className='container my-2'>Already have an account ?</p>
+                    <Link to='/login' className="btn btn-secondary">Login</Link>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default UserProfile
