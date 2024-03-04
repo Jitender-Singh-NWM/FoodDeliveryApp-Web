@@ -33,7 +33,7 @@ const UserProfile = () => {
         .catch(err => console.log(err));
     }
 
-    // UI elements for user profile registration form
+    // Implemented UI related components for the user profile.
     return (
         <div>
             <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : `url("https://images.unsplash.com/photo-1608835291093-394b0c943a75?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,backgroundRepeat: 'no-repeat', width:'100%'  }}>

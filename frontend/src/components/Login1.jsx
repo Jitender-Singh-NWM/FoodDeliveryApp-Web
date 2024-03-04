@@ -27,7 +27,7 @@ const Login = () => {
         .catch(err => console.log(err));
     }
 
-
+// modified the code for login pages for better visibility
     return (<div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

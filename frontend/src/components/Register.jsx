@@ -18,7 +18,7 @@ const Register = () => {
     console.log("user",user.slice(1));
     const [userType,SetUserType] = useState(user.slice(1));
 
-
+ // Modified the registration code in the below code.
     const handleSubmit = (event) => {
         event.preventDefault();
         
