@@ -8,6 +8,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 //     password: String,
 //     UserType:String
 // })
+// modified code here
 const FormDataSchema = new mongoose.Schema({
     name: String,
     email: { type: String, unique: true },
