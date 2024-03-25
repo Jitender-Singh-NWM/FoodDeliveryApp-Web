@@ -7,7 +7,7 @@ import { baseURL, getAllCartItems, increaseItemQuantity } from "../api";
 import {
   BiChevronsRight,
   FcClearFilters,
-  HiCurrencyRupee,
+  HiCurrencyDollar,
 } from "../assets/icons";
 import { alertNULL, alertSuccess } from "../context/actions/alertActions";
 import { setCartItems } from "../context/actions/cartAction";
@@ -67,7 +67,7 @@ const Cart = () => {
       <div className="flex-1 flex flex-col items-start justify-start rounded-t-3xl bg-zinc-900 h-full py-6  gap-3 relative">
         {cart && cart?.length > 0 ? (
           <>
-            <div className="flex flex-col w-full items-start justify-start gap-3 h-[65%] overflow-y-scroll scrollbar-none px-4">
+            <div className="flex flex-col w-full items-start justify-start gap-3 h-[40%] overflow-y-scroll scrollbar-none px-4">
               {cart &&
                 cart?.length > 0 &&
                 cart?.map((item, i) => (
@@ -78,14 +78,14 @@ const Cart = () => {
               <div className="w-full flex items-center justify-evenly">
                 <p className="text-3xl text-zinc-500 font-semibold">Total</p>
                 <p className="text-3xl text-orange-500 font-semibold flex items-center justify-center gap-1">
-                  <HiCurrencyRupee className="text-primary" />
+                  <HiCurrencyDollar className="text-primary" />
                   {total}
                 </p>
               </div>
 
               <motion.button
                 {...buttonClcik}
-                className="bg-orange-400 w-[70%] px-4 py-3 text-xl text-headingColor font-semibold hover:bg-orange-500 drop-shadow-md rounded-2xl"
+                className="bg-orange-400 w-[50%] px-4 py-30 text-xl text-headingColor font-semibold hover:bg-orange-500 drop-shadow-md rounded-2xl"
                 onClick={handleCheckOut}
               >
                 Check Out
@@ -153,7 +153,7 @@ export const CartItemCard = ({ index, data }) => {
           </span>
         </p>
         <p className="text-sm flex items-center justify-center gap-1 font-semibold text-red-400 ml-auto">
-          <HiCurrencyRupee className="text-red-400" /> {itemTotal}
+          <HiCurrencyDollar className="text-red-400" /> {itemTotal}
         </p>
       </div>
 
