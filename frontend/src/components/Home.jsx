@@ -21,15 +21,19 @@ const Home = () => {
 
         <p className="text-[40px] text-headingColor md:text-[72px] font-sans font-extrabold tracking-wider">
           The Fastest Delivery in{" "}
-          <span className="text-orange-600">Your City</span>
+          <span className="text-orange-600">Maryville</span>
         </p>
 
         <p className="text-textColor text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ipsam
-          doloribus et similique distinctio, rem deleniti ipsa, nesciunt vitae
-          labore voluptates sunt ducimus mollitia id libero! Nostrum expedita
-          libero recusandae?
+          "Justgrab" is an innovative food delivery application developed by students under 
+          the guidance of Dr. Zhengrui Qin as part of their Graduate Development Project (GDP). 
+          Designed to cater to the diverse culinary preferences of college communities, Justgrab
+           emphasizes sustainability and supports local businesses by integrating a seamless,
+            user-friendly interface. The app not only facilitates efficient food ordering and 
+            delivery but also incorporates features for dietary customization and real-time 
+            tracking, making it a standout project that bridges technology with the joy of eating.
         </p>
+
         <motion.button
           {...buttonClcik}
           className="bg-gradient-to-bl from-orange-400 to-orange-600 px-4 py-2 rounded-xl text-black text-base font-semibold"
