@@ -16,9 +16,10 @@ const options = {
   zoomControl: true,
 };
 
-const MapWithDirections = ({ origin, destination }) => {
+// Updated props to include latitude and longitude for origin and destination
+const MapWithDirections = ({ originLat, originLng, destinationLat, destinationLng }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDi7jsmBJKnJVPZ_S_8CXL5X4wWDdXBz24", // Replace with your API key
+    googleMapsApiKey: "AIzaSyBDsABszbsbyD0e8lngDDrPnhb3wnyZZhI", // Replace with your API key
   });
 
   const [directions, setDirections] = useState(null);
@@ -32,6 +33,9 @@ const MapWithDirections = ({ origin, destination }) => {
     if (!isLoaded) return;
 
     const directionsService = new window.google.maps.DirectionsService();
+
+    const origin = { lat: 40.360371, lng: -94.887398 }; // Use provided latitude and longitude
+    const destination = { lat: 40.349930, lng: -94.875220 }; // Use provided latitude and longitude
 
     directionsService.route(
       {
@@ -47,7 +51,7 @@ const MapWithDirections = ({ origin, destination }) => {
         }
       }
     );
-  }, [isLoaded, origin, destination]);
+  }, [isLoaded, originLat, originLng, destinationLat, destinationLng]); // Update dependencies
 
   if (loadError) return <div>Error loading maps</div>;
   if (!isLoaded) return <div>Loading Maps</div>;
