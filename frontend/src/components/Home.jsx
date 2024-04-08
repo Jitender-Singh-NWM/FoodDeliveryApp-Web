@@ -49,6 +49,13 @@ const Home = () => {
           alt=""
         />
 
+<div className="py-2 flex-1 flex items-center justify-end relative">
+        <img
+          className="absolute top-0 right-0 md:-right-12  w-full h-420 md:w-auto md:h-650"
+          src={HeroBg}
+          alt=""
+        />
+
         <div className="w-full md:w-460 ml-0 flex flex-wrap items-center justify-center gap-4 gap-y-14">
           {randomData &&
             randomData.map((data, i) => (
