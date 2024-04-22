@@ -1,12 +1,12 @@
 // import React from 'react';
-import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(-1)
+  const [selectedItem, setSelectedItem] = useState(-1);
 
   useEffect(() => {
     if (menuItems.length === 0) {
