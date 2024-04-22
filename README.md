@@ -23,7 +23,7 @@ Welcome to the **Just Grab** project, a MERN stack application developed at **No
 
 Guided by the experienced **Dr. Zhengrui (Jerry) Qin** with the project management assistance of **Varun Raj Rachakatla**.
 
-## 🏛️ Institution
+## 🏛️ Institution .
 
 🏫 **North West Missouri State University**
 
