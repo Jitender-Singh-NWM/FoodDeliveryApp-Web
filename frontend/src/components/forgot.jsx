@@ -45,6 +45,7 @@ const Forgot = () => {
             </div>
 
             <button type="submit" className="btn btn-primary">Reset</button>
+            <button type="submit" className="btn btn-primary">Reset</button>
           </form>
         </div>
       </div>

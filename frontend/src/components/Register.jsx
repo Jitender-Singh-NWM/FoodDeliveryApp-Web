@@ -59,6 +59,10 @@ const Register = () => {
                     >
                         <Select.Option value="Customer">Customer</Select.Option>
                         <Select.Option value="Delivery Agent">Delivery Agent</Select.Option>
+                        <Select.Option value="Customer">Customer</Select.Option>
+                        <Select.Option value="Delivery Agent">Delivery Agent</Select.Option>
+                        <Select.Option value="Customer">Customer</Select.Option>
+                        <Select.Option value="Delivery Agent">Delivery Agent</Select.Option>
                     </Select>
                     </div>
                     }

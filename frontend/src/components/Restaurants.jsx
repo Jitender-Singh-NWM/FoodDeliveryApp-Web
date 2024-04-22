@@ -18,6 +18,7 @@ const foodItems = [
   { name: 'Sushi', imageUrl: '/img/food-7.webp', price: 4.99,quantity:0 },
   { name: 'Spirals', imageUrl: '/img/food-8.webp', price: 5.99,quantity:0 },
   { name: 'Dry Fruits', imageUrl: '/img/food-6.webp', price: 10.99,quantity:0 },
+  { name: 'Frys', imageUrl: '/img/food-6.webp', price: 10.99,quantity:0 },
 
 
 

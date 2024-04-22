@@ -81,6 +81,14 @@ const Home = () => {
                   <span className="text-xs text-red-600">$</span>{" "}
                   {data.product_price}
                 </p>
+                <p className="text-sm  font-semibold text-headingColor">
+                  <span className="text-xs text-red-600">$</span>{" "}
+                  {data.product_price}
+                </p>
+                <p className="text-sm  font-semibold text-headingColor">
+                  <span className="text-xs text-red-600">$</span>{" "}
+                  {data.product_price}
+                </p>
               </motion.div>
             ))}
         </div>

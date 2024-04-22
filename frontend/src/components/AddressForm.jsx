@@ -69,6 +69,16 @@ export const AddressForm = ({ onTabSwitch }) => {
                     placeholder="Postal Code"
                     />
                 </div>
+                <div className="mb-4 md:mr-2 md:mb-0 flex-1">
+                    <label className="block mb-2 text-sm font-bold text-gray-700" for="postalCode">Postal Code</label>
+                    <input 
+                    {...register('postalCode')}
+                    className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border roundedn shadow appearance-none focus:outline-none focus:shadow-outline"
+                    id="postal code"
+                    type="text"
+                    placeholder="Postal Code"
+                    />
+                </div>
             </div>
             <div className="flex justify-end p-2">
                 <Button variant="dark" className="flex items-center" type="submit"><span className="mr-1">Next</span><ArrowRightSvg /></Button>
