@@ -14,7 +14,7 @@ Welcome to the **Just Grab** project, a MERN stack application developed at **No
 - 🧑‍💻 **Raajitha Vardhanapu**
 - 🧑‍💻 **Kavalapati Chandra Priya**
 - 🧑‍💻 **Sravanthi Thukivakam**
-- 🧑‍💻 **Harshitha Singhamalla**
+- 🧑‍💻 **Harshitha Singamala**
 - 🧑‍💻 **Raghupathi Reddy Rupanagudi**
 - 🧑‍💻 **Ashok Ganji**
 - 🧑‍💻 **Jitender Singh Guguloth**
